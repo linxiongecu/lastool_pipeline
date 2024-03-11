@@ -18,6 +18,14 @@ bash ground.sh
 
 # generate DTM
 bash dtm.sh
+## all laz files
+python dtm_parallel.py --cores 30
+## assign epsg or tranform epsg 
+bash dtm_transform.sh
+## merge into one dtm 
+bash dtm_merge.sh # much faster.
+python dtm_merge.py # slower. 
 
 # generate CHM
 bash chm.sh
+

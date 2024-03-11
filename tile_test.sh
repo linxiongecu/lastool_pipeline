@@ -1,4 +1,6 @@
 #!/bin/sh
+#https://rapidlasso.de/pre-processing-mobile-rail-lidar-with-lastools/
+
 echo 'retile laz files'
 
 # Remove existing directory recursively
@@ -10,17 +12,19 @@ mkdir ../tiles_raw
 # ProjectFlorida/USGS3DEPinFL/test/USGS_LPC_FL_WestEvergladesNP_2018_B18_e1470n0428.laz
 #refine_tiling is points number 
 #
-wine $LASTOOLS/lastile.exe -i ../test/USGS_LPC_FL_WestEvergladesNP_2018_B18_e1470n0428.laz  \
-        -tile_size 1000  -refine_tiling 10000000 -buffer 10   \
-        -odir ../tiles_raw -olaz
-wine $LASTOOLS/lastile.exe -i ../tiles_raw/*_1000.laz \
-		  -refine_tiling 10000000 \
-		  -odir ../tiles_raw -olaz 
-#		  -cores 4 
-wine $LASTOOLS/lastile.exe -i ../tiles_raw/*_500.laz \
-		  -refine_tiling 10000000 \
-		  -odir ../tiles_raw -olaz
-#		  -cores 4 
+# echo 'refine_tiling'
+# -refine_tiling 6000000
+wine $LASTOOLS/lastile.exe -i ../test/USGS_LPC_FL_WestEvergladesNP_2018_B18_e1470n0428.laz  -odir ../tiles_raw -olaz
+# echo 'refine_tiles to 500'
+# wine $LASTOOLS/lastile.exe -i ../tiles_raw/*_1000.laz \
+# 		  -refine_tiles 6000000 \
+#           -flag_as_withheld -odir ../tiles_raw -olaz
+# #		  -cores 4 
+# echo 'refine_tiles to 250'
+# wine $LASTOOLS/lastile.exe -i ../tiles_raw/*_500.laz \
+# 		  -refine_tiles 6000000 \
+#           -flag_as_withheld -odir ../tiles_raw -olaz
+# #		  -cores 4 
 
 # echo 'split las file'
 # wine $LASTOOLS/lassplit.exe -i ../test/USGS_LPC_FL_WestEvergladesNP_2018_B18_e1470n0428.laz  \
