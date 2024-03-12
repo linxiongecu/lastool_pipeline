@@ -24,8 +24,17 @@ python dtm_parallel.py --cores 30
 bash dtm_transform.sh
 ## merge into one dtm 
 bash dtm_merge.sh # much faster.
+
 python dtm_merge.py # slower. 
 
 # generate CHM
 bash chm.sh
+
+python chm_parallel.py # all laz files 
+# merge CHM
+
+bash chm_merge.sh
+
+# to do
+retile rest 61 files to smaller size, maybe 500m?
 

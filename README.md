@@ -30,3 +30,11 @@ python dtm_merge.py # slower.
 # generate CHM
 bash chm.sh
 
+python chm_parallel.py # all laz files 
+# merge CHM
+
+bash chm_merge.sh
+
+# to do
+retile rest 61 files to smaller size, maybe 500m?
+
