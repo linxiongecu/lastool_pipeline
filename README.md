@@ -36,5 +36,8 @@ python chm_parallel.py # all laz files
 bash chm_merge.sh
 
 # to do
-retile rest 61 files to smaller size, maybe 500m?
+1 retile rest 61 files to smaller size, maybe 500m?
 
+2 generate pit-free chms. 
+
+https://rapidlasso.de/complete-lidar-processing-pipeline-from-raw-flightlines-to-final-products/
